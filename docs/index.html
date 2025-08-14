@@ -5,65 +5,135 @@
     <meta charset="UTF-8">
     <title>Juan David Villota - Portafolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Estilos -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <style>
         body {
-            background-color: #121212;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
             color: white;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #00adb5);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
         }
-        h2, h4 {
-            font-weight: bold;
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .btn-custom {
-            width: 80%;
-            padding: 12px;
-            font-weight: 600;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #00adb5;
+            border: 4px solid #00ffcc;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+
+        .profile-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px #00ffcc;
+        }
+
+        h2 {
+            font-weight: 800;
+            margin-top: 20px;
+        }
+
+        h4 {
+            font-weight: 600;
+            color: #ccefff;
+        }
+
+        p {
+            max-width: 500px;
+            margin: auto;
+            color: #f0f0f0;
+        }
+
+        .card-link {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: none;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .card-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 200, 0.3);
+        }
+
         footer {
-            margin-top: 30px;
-            color: #aaa;
+            margin-top: 50px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Animación de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container text-center" style="padding-top: 30px; padding-bottom: 30px;">
-        <img src="assets/perfil.jpg" alt="Foto de Juan David Villota" class="profile-img">
-        <h2 style="padding-top: 20px;">Juan David Villota</h2>
-        <h4>Estudiante de Ingeniería de Sistemas | Análisis y Desarrollo Web</h4>
-        <p>Apasionado por la ingeniería de datos, desarrollo web y análisis de información. Buscando
-           construir soluciones innovadoras y escalables.</p>
+    <div class="container text-center py-5 fade-in">
+        <img src="assets/yo.jfif" alt="Foto de Juan David Villota" class="profile-img">
+        <h2>Juan David Villota</h2>
+        <h4>Estudiante de Ingeniería de Sistemas | Ciencia de Datos y Desarrollo Web</h4>
+        <p>Apasionado por el mundo de los datos, desarrollo web y análisis de información. Buscando construir soluciones innovadoras y escalables.</p>
     </div>
 
-    <div class="container text-center">
-        <button onclick="location.href='https://github.com/JUAN-VILLOTA'" type="button"
-            class="btn btn-outline-light btn-custom">💻 Mis Proyectos en GitHub</button>
-
-        <button onclick="location.href='https://www.linkedin.com/in/juan-david-villota'" type="button"
-            class="btn btn-outline-light btn-custom">🔗 Conecta en LinkedIn</button>
-
-        <button onclick="location.href='https://platzi.com/cursos/docker-fundamentos/'" type="button"
-            class="btn btn-outline-light btn-custom">📦 Certificación en Docker</button>
-
-        <button onclick="location.href='mailto:tuemail@example.com'" type="button"
-            class="btn btn-outline-light btn-custom">✉️ Contáctame por Email</button>
+    <div class="container text-center fade-in" style="animation-delay: 0.15s;">
+        <h3 style="font-weight: 700; margin-bottom: 25px;">⚙️ Tecnologías</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-4 mb-3 tech-item">🐍 Python</div>
+            <div class="col-md-2 col-4 mb-3 tech-item">🐘 PHP</div>
+            <div class="col-md-2 col-4 mb-3 tech-item">🗄️ MySQL</div>
+            <div class="col-md-2 col-4 mb-3 tech-item">☁️ AWS</div>
+            <div class="col-md-2 col-4 mb-3 tech-item">☕ Java</div>
+            <div class="col-md-2 col-4 mb-3 tech-item">📊 Databricks</div>
+        </div>
+    </div>
+    
+    <div class="container text-center fade-in" style="animation-delay: 0.3s;">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-3">
+                <a href="https://github.com/JUAN-VILLOTA" class="card-link">💻 Mis Proyectos en GitHub</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="https://www.linkedin.com/in/juan-villota/" class="card-link">🔗 Conecta en LinkedIn</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="mailto:villotacordobajuandavid18@gmial.com" class="card-link">✉️ Contáctame por Email</a>
+            </div>
+        </div>
     </div>
 
-    <footer class="text-center">
-        <p>© 2025 Juan David Villota | Diseñado con ❤️ y Bootstrap</p>
+    <footer class="text-center fade-in" style="animation-delay: 0.6s;">
+        <p>© 2025 Juan David Villota | Diseñado con Bootstrap</p>
     </footer>
 
     <!-- Scripts -->
